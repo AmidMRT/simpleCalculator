@@ -1,7 +1,28 @@
+/* @font-face {
+    font-family: myCalcFontHeavy;
+    src: url(./fonts/TrueType/SFDigitalReadout-LightObliq.ttf);
+}
+
+@font-face {
+    font-family: myCalcFontLight;
+    src: url(./fonts/TrueType/SFDigitalReadout-Heavy.ttf);
+} */
+
+
 .display {
+    font-family: myCalcFontHeavy;
     border: solid 3px red;
     background-color: rgb(253, 174, 190);
     width: 300px;
     height:100px;
     font-size: 48px;
+}
+
+.smallHistory {
+    font-family: myCalcFontLight;
+    border: solid 3px blue;
+    background-color: rgb(156, 156, 250);
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
 }
