@@ -3,6 +3,7 @@ let secondVar = new Number;
 let operator = new Function;
 let container ='';
 let result = new Number;
+let operatorSign = '';
 firstVar = null;
 secondVar = null;
 
@@ -45,12 +46,12 @@ function clearAll () {
 
 const digits = Array.from(document.querySelectorAll(".digits button"));
 const display = document.querySelector(".display");
-const ops = Array.from(document.querySelectorAll(".ops .op"));
-const res = Array.from(document.querySelectorAll(".ops .res"));
-const misc = document.querySelector(".ops .misc");
+const ops = Array.from(document.querySelectorAll(".op"));
+const res = Array.from(document.querySelectorAll(".res"));
+const rev = document.querySelector("#rev");
 const smallDisplay = document.querySelector(".smallHistory");
 
-misc.addEventListener("click", ()=> {
+rev.addEventListener("click", ()=> {
     if (container !== ''){
         container = (-1)* parseFloat(container);
         display.textContent = container;
@@ -68,7 +69,7 @@ res.forEach((item)=> (item.addEventListener("click", ()=> {
     if (item.textContent == "C") {
         clearAll();
     } else if (item.textContent == "=") {
-        if (firstVar == null) {
+        if (firstVar == null || firstVar == NaN) {
             firstVar = parseFloat(container);
         } else if (container !== '') {
             secondVar = parseFloat(container);
@@ -78,8 +79,8 @@ res.forEach((item)=> (item.addEventListener("click", ()=> {
         console.log(firstVar, secondVar, operator, result);
         firstVar = result;
         secondVar = null;
-        display.textContent = result;
-        smallDisplay.textContent = result;
+        display.textContent = '';
+        smallDisplay.textContent = `${result}`+`${operatorSign}`;
     }
 })))
 
@@ -111,4 +112,5 @@ ops.forEach((item)=> (item.addEventListener("click", ()=> {
     firstVar = result;
     container = '';
     smallDisplay.textContent = `${result}`+`${item.textContent}`;
+    operatorSign = item.textContent;
 })));

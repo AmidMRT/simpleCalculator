@@ -1,28 +1,115 @@
-/* @font-face {
-    font-family: myCalcFontHeavy;
-    src: url(./fonts/TrueType/SFDigitalReadout-LightObliq.ttf);
+@font-face {
+    font-family: myCalcFont;
+    src: url(./fonts/SFDigitalReadout-LightObliq.ttf);
 }
 
-@font-face {
-    font-family: myCalcFontLight;
-    src: url(./fonts/TrueType/SFDigitalReadout-Heavy.ttf);
-} */
+.calBody {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
 
+.rightPart {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  /* width: 640px; */
+  /* border: solid 1px red; */
+  /* flex-direction: column; */
+}
+
+.leftPart {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: solid 1px red; */
+}
+
+
+.leftPart .digits {
+  /* border: solid 2px blue; */
+  display: flex;
+  width: 516px;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  /* margin: 0 0 0 5px; */
+}
 
 .display {
-    font-family: myCalcFontHeavy;
-    border: solid 3px red;
-    background-color: rgb(253, 174, 190);
-    width: 300px;
-    height:100px;
-    font-size: 48px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 5px;
+  font-family: myCalcfont, 'Courier New', Courier, monospace;
+  border: solid 3px rgb(0, 0, 0);
+  color: rgb(250, 68, 68);
+  background-color: rgb(39, 39, 39);
+  width: 500px;
+  height:100px;
+  font-size: 80px;
+  text-shadow:1px 1px 10px #f1a7a7, 1px 1px 10px #ccc;
 }
 
 .smallHistory {
-    font-family: myCalcFontLight;
-    border: solid 3px blue;
-    background-color: rgb(156, 156, 250);
-    width: 300px;
-    height: 30px;
-    font-size: 16px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 5px;
+  font-family: myCalcFont,'Courier New', Courier, monospace;
+  border: solid 3px rgb(0, 0, 0);
+  background-color: rgb(211, 211, 211);
+  width: 500px;
+  height: 48px;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.opButtons{
+  display: flex;
+  flex-direction: column;
+}
+
+.opButtons .op{
+  text-align: center;
+  width: 85px;
+  height: 30px;
+  background-color: rgb(155, 210, 255);
+  border-color: rgb(202, 202, 202);
+}
+
+.eval {
+  display: flex;
+  flex-direction: column;
+  width: 85px;
+}
+
+.eval #equal {
+  width: 85px;
+  height: 30px;
+  background-color: rgb(255, 171, 123);
+  border-color: rgb(202, 202, 202);
+}
+
+.eval button {
+  width: 85px;
+  height: 30px;
+  background-color: rgb(213, 247, 180);
+  border-color: rgb(202, 202, 202);
+}
+
+.digits button {
+  background-color: rgb(87, 87, 87);
+  color: #ccc;
+  height: 30px;
+  width: 47px;
+} 
+
+.footer {
+  text-align: center;
 }
